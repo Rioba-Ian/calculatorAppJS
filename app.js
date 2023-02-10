@@ -1,5 +1,19 @@
-console.log("Here....")
+const operate = (operator) =>{
+    return operator
+}
 
+const outputDisplay = document.querySelector("#output")
+const buttonsCalc = document.querySelectorAll(".main-calculator")
+
+buttonsCalc.forEach((item)=> {
+    item.addEventListener('click', getValue)
+})
+
+function getValue(e){
+    console.log(e.target.value);
+}
+
+console.log(outputDisplay.textContent.trim())
 const add = function (...args){
     let total = 0
     for(arg of args){
@@ -34,11 +48,9 @@ const multiply = function(...args){
     return multiplyBy
 }
 
-const operate = (operator) =>{
-    return operator
-}
 
-console.log(operate(add(2,3,4)))
-console.log(operate(subtract(4,3,2)))
-console.log(operate(multiply(2,3,4)))
-console.log(operate(divide(2,3,4)))
+
+// console.log(operate(add(2,3,4)))
+// console.log(operate(subtract(4,3,2)))
+// console.log(operate(multiply(2,3,4)))
+// console.log(operate(divide(2,3,4)))
