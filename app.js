@@ -1,8 +1,6 @@
-const operate = (operator) =>{
-    return operator
-}
 
 const outputDisplay = document.querySelector("#output")
+const INITIAL_VALUE = Number(outputDisplay)
 const buttonsCalc = document.querySelectorAll(".main-calculator")
 
 buttonsCalc.forEach((item)=> {
@@ -10,10 +8,27 @@ buttonsCalc.forEach((item)=> {
 })
 
 function getValue(e){
-    console.log(e.target.value);
+    
 }
 
-console.log(outputDisplay.textContent.trim())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const operate = (operator) =>{
+    return operator
+}
+
 const add = function (...args){
     let total = 0
     for(arg of args){
