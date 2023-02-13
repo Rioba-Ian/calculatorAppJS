@@ -1,6 +1,8 @@
+let displayVal = 0
 
+// on the display screen display contents of the 
 const outputDisplay = document.querySelector("#output")
-const INITIAL_VALUE = Number(outputDisplay)
+outputDisplay.textContent = displayVal
 const buttonsCalc = document.querySelectorAll(".main-calculator")
 
 buttonsCalc.forEach((item)=> {
@@ -8,7 +10,8 @@ buttonsCalc.forEach((item)=> {
 })
 
 function getValue(e){
-    
+    displayVal = e.target.value
+    console.log(displayVal);
 }
 
 
