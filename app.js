@@ -1,5 +1,10 @@
 let displayVal = 0
 
+const calcObjects = {
+    nums: [],
+    operatorArray: [],
+}
+
 // on the display screen display contents of the 
 const outputDisplay = document.querySelector("#output")
 outputDisplay.textContent = displayVal
@@ -11,8 +16,22 @@ buttonsCalc.forEach((item)=> {
 
 function getValue(e){
     displayVal = e.target.value
+    getNumsOperands(displayVal)
+    outputDisplay.textContent = calcObjects.nums
+    
+    // getNumsOperands(e.target)
     console.log(displayVal);
 }
+
+function getNumsOperands(n){
+    if (Number(n) == NaN){
+        calcObjects["operatorArray"].push(n)
+    }
+    calcObjects["nums"].push(Number(n))
+}
+
+
+
 
 
 
