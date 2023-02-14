@@ -1,8 +1,12 @@
 let displayVal
 
+const operate = (operator) =>{
+    return operator
+}
+
 const calcObjects = {
     nums: [],
-    operator: ""
+    operator: "",
 }
 
 // on the display screen display contents of the 
@@ -21,19 +25,21 @@ operandCalc.forEach((item)=> {
 })
 
 function getBtnValue(e){
-    calcObjects.nums.push(e.target.value)
+    calcObjects["nums"].push(e.target.value)
     displayVal = calcObjects.nums[0]
 
-    outputDisplay.textContent += calcObjects["nums"].splice(-1).join("")
+    outputDisplay.textContent += calcObjects["nums"].at(-1)
 }
 
 function getOperValue(e){
     calcObjects["operator"] = e.target.id
 
     outputDisplay.textContent += e.target.value
+
 }
 
 
+console.log(calcObjects.nums);
 
 
 
@@ -56,9 +62,10 @@ function getOperValue(e){
 
 
 
-const operate = (operator) =>{
-    return operator
-}
+
+
+
+
 
 const add = function (...args){
     let total = 0
