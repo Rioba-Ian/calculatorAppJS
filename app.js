@@ -1,34 +1,41 @@
-let displayVal = 0
+let displayVal
 
 const calcObjects = {
     nums: [],
-    operatorArray: [],
+    operator: ""
 }
 
 // on the display screen display contents of the 
 const outputDisplay = document.querySelector("#output")
 outputDisplay.textContent = displayVal
-const buttonsCalc = document.querySelectorAll(".main-calculator")
+
+const buttonsCalc = document.querySelectorAll("button[name='num']")
+const operandCalc = document.querySelectorAll("button[name='oper']")
 
 buttonsCalc.forEach((item)=> {
-    item.addEventListener('click', getValue)
+    item.addEventListener('click', getBtnValue)
 })
 
-function getValue(e){
-    displayVal = e.target.value
-    getNumsOperands(displayVal)
-    outputDisplay.textContent = calcObjects.nums.join("")
-    
-    // getNumsOperands(e.target)
-    console.log(displayVal);
+operandCalc.forEach((item)=> {
+    item.addEventListener('click', getOperValue)
+})
+
+function getBtnValue(e){
+    calcObjects.nums.push(e.target.value)
+    displayVal = calcObjects.nums[0]
+
+    outputDisplay.textContent += calcObjects["nums"].splice(-1).join("")
 }
 
-function getNumsOperands(n){
-    if (Number(n) == NaN){
-        calcObjects["operatorArray"].push(n)
-    }
-    calcObjects["nums"].push(Number(n))
+function getOperValue(e){
+    calcObjects["operator"] = e.target.id
+
+    outputDisplay.textContent += e.target.value
 }
+
+
+
+
 
 
 
