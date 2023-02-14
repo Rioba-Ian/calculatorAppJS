@@ -9,6 +9,8 @@ const calcObjects = {
     operator: "",
 }
 
+
+
 // on the display screen display contents of the 
 const outputDisplay = document.querySelector("#output")
 outputDisplay.textContent = displayVal
@@ -33,6 +35,7 @@ function getBtnValue(e){
 
 function getOperValue(e){
     calcObjects["operator"] = e.target.id
+    calcObjects["nums"].push(",")
 
     outputDisplay.textContent += e.target.value
 
@@ -41,6 +44,13 @@ function getOperValue(e){
 
 console.log(calcObjects.nums);
 
+let test_arr = []
+let test1 = ['2','3',',','4']
+test_arr = test1.join("")
+                .split(",")
+                .map(item => Number(item))
+result = add(test_arr)
+console.log(add(test_arr))
 
 
 
@@ -67,7 +77,10 @@ console.log(calcObjects.nums);
 
 
 
-const add = function (...args){
+
+
+
+function add([...args]){
     let total = 0
     for(arg of args){
         total += arg
@@ -75,7 +88,7 @@ const add = function (...args){
     return total
 }
 
-const subtract = function(...args){
+function subtract([...args]){
     let subtractFrom = args[0]
     for(arg of args.slice(1)){
         subtractFrom -= arg
