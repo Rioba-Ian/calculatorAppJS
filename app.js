@@ -6,7 +6,7 @@ const operate = (operator) =>{
 
 const calcObjects = {
     nums: [],
-    operator: "",
+    operator: [],
 }
 
 
@@ -34,7 +34,7 @@ function getBtnValue(e){
 }
 
 function getOperValue(e){
-    calcObjects["operator"] = e.target.id
+    calcObjects["operator"].push(e.target.id)
     calcObjects["nums"].push(",")
 
     outputDisplay.textContent += e.target.value
