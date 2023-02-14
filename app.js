@@ -17,7 +17,7 @@ buttonsCalc.forEach((item)=> {
 function getValue(e){
     displayVal = e.target.value
     getNumsOperands(displayVal)
-    outputDisplay.textContent = calcObjects.nums
+    outputDisplay.textContent = calcObjects.nums.join("")
     
     // getNumsOperands(e.target)
     console.log(displayVal);
@@ -29,6 +29,8 @@ function getNumsOperands(n){
     }
     calcObjects["nums"].push(Number(n))
 }
+
+
 
 
 
