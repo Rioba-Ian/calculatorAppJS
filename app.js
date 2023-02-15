@@ -14,7 +14,10 @@ outputDisplay.textContent = displayVal
 
 const buttonsCalc = document.querySelectorAll("button[name='num']")
 const operandCalc = document.querySelectorAll("button[name='oper']")
+const pointCalc = document.querySelector("button[name='point']")
 
+
+// event listeners
 buttonsCalc.forEach((item)=> {
     item.addEventListener('click', getBtnValue)
 })
@@ -23,6 +26,10 @@ operandCalc.forEach((item)=> {
     item.addEventListener('click', getOperValue)
 })
 
+pointCalc.addEventListener("click", handlePointNum, {once: true})
+
+
+// handlers for event listeners
 function getBtnValue(e){
     calcObjects["nums"].push(e.target.value)
     displayVal = calcObjects.nums[0]
@@ -36,6 +43,10 @@ function getOperValue(e){
 
     outputDisplay.textContent += e.target.value
 
+}
+
+function handlePointNum(){
+    outputDisplay.textContent += "."
 }
 
 
