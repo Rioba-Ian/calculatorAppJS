@@ -8,9 +8,6 @@ const calcObjects = {
     nums: [],
     operator: [],
 }
-
-
-
 // on the display screen display contents of the 
 const outputDisplay = document.querySelector("#output")
 outputDisplay.textContent = displayVal
@@ -42,25 +39,39 @@ function getOperValue(e){
 }
 
 
-console.log(calcObjects.nums);
-
-let test_arr = []
-let test1 = ['2','3',',','4', ","]
-test_arr = test1.join("")
-                .split(",")
-                .map(item => Number(item))
-result = add(test_arr)
-console.log(add(test_arr))
-
-const posOperators = test1.reduce((acc, val, iter)=> 
-                    (val === "," && acc.push(iter), acc),    
-                    [])
 
 
 
+console.log(calcObjects);
+
+// let test_arr = []
+// let test1 = ['2','3',',','4', ","]
+// test_arr = test1.join("")
+//                 .split(",")
+//                 .map(item => Number(item))
+// result = add(test_arr)
+// console.log(add(test_arr))
+
+// const posOperators = test1.reduce((acc, val, iter)=> 
+//                     (val === "," && acc.push(iter), acc),    
+//                     [])
 
 
 
+
+
+// function createResult(obj){
+//     if (obj.nums.length == 4){
+//         obj["pairNums"] = obj["nums"].join("")
+//                             .split(",")
+//                             .map(item => Number(item))
+//     }
+
+    
+//     return obj
+// }
+
+// createResult(calcObjects)
 
 
 
