@@ -26,7 +26,10 @@ operandCalc.forEach((item)=> {
     item.addEventListener('click', getOperValue)
 })
 
-pointCalc.addEventListener("click", handlePointNum, {once: true})
+pointCalc.addEventListener("click", function handlePointNum(){
+    outputDisplay.textContent += "."
+    calcObjects["nums"].splice(-1, 1, calcObjects.nums.slice(-1)+".")
+}, {once: true })
 
 
 // handlers for event listeners
@@ -43,11 +46,9 @@ function getOperValue(e){
 
     outputDisplay.textContent += e.target.value
 
+    
 }
 
-function handlePointNum(){
-    outputDisplay.textContent += "."
-}
 
 
 
