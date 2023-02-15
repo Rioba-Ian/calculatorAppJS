@@ -1,5 +1,7 @@
 let displayVal
 
+let operandSelected = false;
+
 const operate = (operator) =>{
     return operator
 }
@@ -26,14 +28,20 @@ operandCalc.forEach((item)=> {
     item.addEventListener('click', getOperValue)
 })
 
-pointCalc.addEventListener("click", function handlePointNum(){
-    outputDisplay.textContent += "."
-    calcObjects["nums"].splice(-1, 1, calcObjects.nums.slice(-1)+".")
-}, {once: true })
+pointCalc.addEventListener("click", ()=> {
+    if (!operandSelected){
+        handlePoint 
+    }
+}, {once: true})
+
+if(operandSelected){
+    pointCalc.removeEventListener("click", handlePoint)
+}
 
 
 // handlers for event listeners
 function getBtnValue(e){
+    
     calcObjects["nums"].push(e.target.value)
     displayVal = calcObjects.nums[0]
 
@@ -44,17 +52,17 @@ function getOperValue(e){
     calcObjects["operator"].push(e.target.id)
     calcObjects["nums"].push(",")
 
-    outputDisplay.textContent += e.target.value
+    operandSelected = false 
 
-    
+    outputDisplay.textContent += e.target.value
+}
+
+function handlePoint(){
+    outputDisplay.textContent += "."
+    calcObjects["nums"].splice(-1, 1, calcObjects.nums.slice(-1)+".")  
 }
 
 
-
-
-
-
-console.log(calcObjects);
 
 // let test_arr = []
 // let test1 = ['2','3',',','4', ","]
