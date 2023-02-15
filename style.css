@@ -8,5 +8,8 @@ header{
 }
 
 #output{
+    margin-bottom: 2em;
     padding: 20px 0;
+    width: 80%;
+    border: 2px solid silver;
 }
