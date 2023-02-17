@@ -8,7 +8,7 @@ button{
     padding: 0.75em;
     font-size: 2rem;
 
-    outline: 1px solid gray;
+    outline: 2px solid gray;
 }
 
 button:active{
@@ -20,13 +20,20 @@ html{
     font-size: 1rem;
 }
 
+body{
+    background: #efefef;
+}
+
 header{
     padding: 12vmin 0 20px;
     text-align: center;
+
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .main-container{
-    outline: 5px solid black;
+    outline: 8px solid rgb(47, 45, 45);
 }
 
 .main-container{
@@ -38,18 +45,24 @@ header{
 #output{
     padding: 0.4em 0;
     font-size: 2.5rem;
+    font-weight: 900;
+    color: rgb(53, 51, 51);
+    font-size: 3rem;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 button[name='oper']{
-    background-color: chocolate;
+    background-color: coral;
 }
 
 button[name='point']{
-    background-color: limegreen;
+    background-color: cornflowerblue;
 }
 
 button[type='reset']{
     font-size: 1rem;
+    background-color: silver;
 }
 
 .main-calculator{
@@ -57,3 +70,16 @@ button[type='reset']{
     grid-template-columns: repeat(4,1fr);
 }
 
+#del{
+    font-size: 1rem;
+}
+
+#equals{
+    grid-column: 3/-1;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.zero{
+    grid-column: 2/4;
+}
