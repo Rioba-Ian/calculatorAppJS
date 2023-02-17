@@ -3,6 +3,11 @@
     margin: 0;
 }
 
+button{
+    border: none;
+    padding: 1em;
+}
+
 header{
     padding: 12vmin 0 20px;
 }
@@ -12,4 +17,12 @@ header{
     padding: 20px 0;
     width: 80%;
     border: 2px solid silver;
+}
+
+button[name='oper']{
+    background-color: chocolate;
+}
+
+button[name='point']{
+    background-color: limegreen;
 }
