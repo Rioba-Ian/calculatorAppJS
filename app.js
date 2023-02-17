@@ -1,4 +1,4 @@
-
+let displayVal = 0
 
 const operate = (operator) =>{
     return operator
@@ -8,13 +8,29 @@ const operate = (operator) =>{
 // on the display screen display contents of the 
 const outputDisplay = document.querySelector("#output")
 outputDisplay.textContent = displayVal
-
 const buttonsCalc = document.querySelectorAll("button[name='num']")
 const operandCalc = document.querySelectorAll("button[name='oper']")
 const pointCalc = document.querySelector("button[name='point']")
 
 
 // event listeners
+
+buttonsCalc.forEach((btnNum)=> {
+    btnNum.addEventListener("click", handleNumClicked)
+})
+
+
+
+
+
+
+//// event handlers
+// event handler for when numbers are clicked.
+function handleNumClicked(e){
+    displayVal = e.target.value 
+    outputDisplay.textContent = displayVal
+}
+
 
 
 
