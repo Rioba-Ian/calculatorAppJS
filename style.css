@@ -37,7 +37,7 @@ header{
 }
 
 .main-container{
-    width: 350px;
+    width: 360px;
     margin: 0 auto;
 
 }
@@ -52,8 +52,12 @@ header{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+button[name='num']{
+    background-color: hwb(214 31% 19%);
+}
+
 button[name='oper']{
-    background-color: coral;
+    background-color: rgb(244, 236, 81);
 }
 
 button[name='point']{
@@ -61,8 +65,8 @@ button[name='point']{
 }
 
 button[type='reset']{
-    font-size: 1rem;
-    background-color: silver;
+    font-size: 2rem;
+    background-color: rgb(150, 150, 150);
 }
 
 .main-calculator{
@@ -82,4 +86,10 @@ button[type='reset']{
 
 .zero{
     grid-column: 2/4;
+    padding: 0;
+    font-size: 3rem;
+}
+
+#del{
+    font-size: 2rem;
 }
