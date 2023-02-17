@@ -14,7 +14,7 @@ const outputDisplay = document.querySelector("#output")
 const buttonsCalc = document.querySelectorAll("button[name='num']")
 const operandCalc = document.querySelectorAll("button[name='oper']")
 const pointCalc = document.querySelector("button[name='point']")
-
+const equalSign = document.querySelector("#equals")
 
 //// event listeners
 buttonsCalc.forEach((btnNum) => {
@@ -35,7 +35,12 @@ pointCalc.addEventListener("click", function handleDecimal(e) {
     }
 })
 
-
+equalSign.addEventListener("click", function handleEquals(){
+    if (previousNum && currentNum){
+        const result =  calculate(parseFloat(previousNum),currentOperand, parseFloat(currentNum))
+        outputDisplay.textContent = result
+    }
+})
 
 //// event handlers
 // event handler for when numbers are clicked.
