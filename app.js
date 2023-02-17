@@ -6,12 +6,7 @@ const operate = (operator) => {
     return operator
 }
 
-let operState = true
-decimalState = true
-numState = true
-
-
-
+let decimalHandled = false 
 
 // on the display screen display contents of the 
 const outputDisplay = document.querySelector("#output")
@@ -28,12 +23,16 @@ buttonsCalc.forEach((btnNum) => {
 
 operandCalc.forEach((btnOperand) => {
     btnOperand.addEventListener("click", handleOperandClicked)
-})
+}, {once:true})
 
 
 // event listener and handler for point
 pointCalc.addEventListener("click", function handleDecimal(e) {
-    
+    if (!decimalHandled && currentNum && !isNaN(currentNum)){
+        currentNum += "."
+        outputDisplay.textContent = currentNum
+        decimalHandled = true
+    }
 })
 
 
@@ -43,6 +42,10 @@ pointCalc.addEventListener("click", function handleDecimal(e) {
 function handleNumClicked(e) {
     currentNum += e.target.value 
     outputDisplay.textContent = currentNum
+
+    if (decimalHandled && currentNum && !isNaN(currentNum)){
+        decimalHandled = false
+    }
 }
 
 
@@ -57,6 +60,8 @@ function handleOperandClicked(e) {
     }
     currentNum = ""
     currentOperand = e.target.value
+    console.log(currentOperand);
+    console.log(previousNum, currentNum);
 }
 
 function calculate(num1, operator, num2){
@@ -65,6 +70,10 @@ function calculate(num1, operator, num2){
             return num1 + num2
         case "-":
             return num1 - num2
+        case "*":
+            return num1 * num2 
+        case "/":
+            return num2 == 0? "Math Error" : num1 / num2
         default:
             return null
     }
@@ -73,93 +82,10 @@ function calculate(num1, operator, num2){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function add([...args]) {
-    let total = 0
-    for (arg of args) {
-        total += arg
-    }
-    return total
+function add(a,b) {
+    return a + b
 }
 
-function subtract([...args]) {
-    let subtractFrom = args[0]
-    for (arg of args.slice(1)) {
-        subtractFrom -= arg
-    }
-    return subtractFrom
+function subtract(a, b) {
+    return a - b
 }
-
-const divide = function (...args) {
-    let first = args[0]
-
-    for (arg of args.slice(1)) {
-        first /= arg
-    }
-
-    return first == "Infinity" ? "Math Error" : first
-}
-
-const multiply = function (...args) {
-    let multiplyBy = args[0]
-    for (arg of args.slice(1)) {
-        multiplyBy *= arg
-    }
-    return multiplyBy
-}
-
-
-
-// console.log(operate(add(2,3,4)))
-// console.log(operate(subtract(4,3,2)))
-// console.log(operate(multiply(2,3,4)))
-// console.log(operate(divide(2,3,4)))
