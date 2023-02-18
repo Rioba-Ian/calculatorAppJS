@@ -17,6 +17,9 @@ const operandCalc = document.querySelectorAll("button[name='oper']")
 const pointCalc = document.querySelector("button[name='point']")
 const equalSign = document.querySelector("#equals")
 const resetCalc = document.querySelector("#reset")
+const clearCalc = document.querySelector("#del")
+
+
 
 //// event listeners
 buttonsCalc.forEach((btnNum) => {
@@ -51,11 +54,23 @@ resetCalc.addEventListener("click", function handleReset(){
     }
 })
 
+
+// handle click when
+clearCalc.addEventListener("click", function handleClear(){
+      console.log("clear has been clicked.");
+})
+
+
 //// event handlers
 // event handler for when numbers are clicked.
 function handleNumClicked(e) {
     currentNum += e.target.value 
     outputDisplay.textContent = currentNum
+
+
+    console.log(currentNum);
+
+    
 
     if (decimalHandled && currentNum && !isNaN(currentNum)){
         decimalHandled = false        
@@ -86,6 +101,9 @@ function handleOperandClicked(e) {
         console.log(previousNum, currentNum);
 
         operandHandled = true
+
+
+        
     }
 }
 
