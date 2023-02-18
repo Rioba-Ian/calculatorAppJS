@@ -57,7 +57,8 @@ resetCalc.addEventListener("click", function handleReset(){
 
 // handle click when
 clearCalc.addEventListener("click", function handleClear(){
-      console.log("clear has been clicked.");
+      currentNum = currentNum.substring(0, currentNum.length-1)
+      outputDisplay.textContent = currentNum == ""? 0 : currentNum
 })
 
 
