@@ -11,8 +11,13 @@ button{
     outline: 2px solid gray;
 }
 
-button:active{
+
+
+button:active, button::after{
     outline: 1px blueviolet solid;
+    scale: 1.2;
+
+    transition: scale ease-in-out 0.2;
 }
 
 html{

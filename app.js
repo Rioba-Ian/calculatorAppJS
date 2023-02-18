@@ -7,6 +7,7 @@ const operate = (operator) => {
 }
 
 let decimalHandled = false 
+let operandHandled = false
 
 // on the display screen display contents of the 
 const outputDisplay = document.querySelector("#output")
