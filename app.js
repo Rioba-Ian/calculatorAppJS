@@ -58,24 +58,35 @@ function handleNumClicked(e) {
     outputDisplay.textContent = currentNum
 
     if (decimalHandled && currentNum && !isNaN(currentNum)){
-        decimalHandled = false
+        decimalHandled = false        
     }
+
+    if (operandHandled && previousNum){
+        operandHandled = false
+    }
+
 }
 
 
 // event handler for when operand is clicked
 function handleOperandClicked(e) {
-    if(previousNum !== ""){
-        const result = calculate(parseFloat(previousNum), currentOperand, parseFloat(currentNum))
-        outputDisplay.textContent = result 
-        previousNum = result
-    }else{
-        previousNum = currentNum
+
+    if (!operandHandled && currentNum && !isNaN(currentNum)){
+
+        if(previousNum !== ""){
+            const result = calculate(parseFloat(previousNum), currentOperand, parseFloat(currentNum))
+            outputDisplay.textContent = result 
+            previousNum = result
+        }else{
+            previousNum = currentNum
+        }
+        currentNum = ""
+        currentOperand = e.target.value
+        console.log(currentOperand);
+        console.log(previousNum, currentNum);
+
+        operandHandled = true
     }
-    currentNum = ""
-    currentOperand = e.target.value
-    console.log(currentOperand);
-    console.log(previousNum, currentNum);
 }
 
 function calculate(num1, operator, num2){
