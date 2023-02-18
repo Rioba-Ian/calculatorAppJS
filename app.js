@@ -45,7 +45,7 @@ equalSign.addEventListener("click", function handleEquals(){
 })
 
 resetCalc.addEventListener("click", function handleReset(){
-    if (previousNum || currentNum){
+    if (previousNum || currentNum || isNaN(previousNum)){
         previousNum, currentNum = 0
         outputDisplay.textContent = 0
     }

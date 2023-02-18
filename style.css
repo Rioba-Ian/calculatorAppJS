@@ -16,8 +16,9 @@ button{
 button:active, button::after{
     outline: 1px blueviolet solid;
     scale: 1.2;
+    
 
-    transition: scale ease-in-out 0.2;
+    transition: scale ease-in-out 0.5;
 }
 
 html{
@@ -53,7 +54,7 @@ header{
     font-weight: 900;
     color: rgb(53, 51, 51);
     font-size: 3rem;
-
+    
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
