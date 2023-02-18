@@ -5,7 +5,7 @@
 
 button{
     border: none;
-    padding: 0.75em;
+    padding: 0.375em;
     font-size: 2rem;
 
     outline: 2px solid gray;
@@ -37,7 +37,7 @@ header{
 }
 
 .main-container{
-    width: 360px;
+    width: clamp(300px, 300px + 5vw, 360px);
     margin: 0 auto;
 
 }
